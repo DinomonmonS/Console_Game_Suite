@@ -5,13 +5,14 @@ namespace Program_Z.C
     internal class Program
     {
         public static void Main()
-        {
+        { 
             Menu();
         }
         static string[,] ttt = { { "1|", "2|", "3|", }, { "4|", "5|", "6|", }, { "7|", "8|", "9|" } };
         static bool p1t = true;
         static void Menu()
         {
+            CB();
             string menu;
             Console.WriteLine("Pick a game. Rock Paper Sscissors against Ross [1] or Tic Tac Toe against your friend [2].");
             menu = Console.ReadLine();
@@ -158,10 +159,21 @@ namespace Program_Z.C
                 Console.WriteLine();
             }
         }
+        static void CB()
+        {
+            int z = 1; 
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    ttt[i, j] = z.ToString() + "|"; 
+                    z++; 
+                }
+            }
+        }
         static void TTT()
         {
             GB();
-            //Console.Clear();
             if (p1t == true)
             {
                 Console.WriteLine("Player 1 pick a space");
